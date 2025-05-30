@@ -1,0 +1,4 @@
+- [ ] Read a lot of documentation
+- [ ] FInish the ELF Chapter of ARM Internals
+- [ ] Finish the Makefile
+- [ ] Understand ARM MMU
