@@ -7,14 +7,15 @@
     devShells = {
       x86_64-linux = let
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        cross = pkgs.pkgsCross.aarch64-multiplatform.buildPackages;
+        cross = pkgs.pkgsCross.aarch64-multiplatform;
       in {
         default = pkgs.mkShell {
           packages = [
-            cross.gcc
-            cross.binutils
+            cross.buildPackages.gcc
+            cross.buildPackages.binutils
             pkgs.qemu
             pkgs.gnumake
+			pkgs.coreutils
           ];
 
           shellHook = ''
